@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('font.css');
+
+/* el asterisco es el selector universal */
+*{
+    font-family: "jersey 10 charted";
+}
+
+h1{
+    color: rgba(8, 5, 5, 0.747);
+    font-size: 50px;
+    letter-spacing: -1px;
+    word-spacing: 3px;
+    text-decoration: line-through rgb(247, 28, 28);
+    font-family: "Poppins", sans-serif;
+}
+
+h2{
+    color: rgba(8, 5, 5, 0.747);
+    font-size: 50px;
+    letter-spacing: -1px;
+    word-spacing: 3px;
+    text-decoration: underline rgb(0, 255, 76) wavy;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+}
+
+h3{
+    color: rgba(8, 62, 211, 0.747);
+    font-size: 90px;
+    letter-spacing: -1px;
+    word-spacing: 3px;
+    text-shadow: 2px 0px 5px rgb(217, 255, 4),
+    20px 50px 5px rgb(95, 15, 21),
+    30px 20px 5px rgb(69, 57, 128);
+    background-color: rgb(0, 0, 0);
+/*     width: 90px; */
+    font-family: sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

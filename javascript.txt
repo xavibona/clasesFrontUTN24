@@ -1,0 +1,789 @@
+### Que es javascript?
+Es un lenguaje de programación interpretado por el v8 engine. De codigo abierto (opensource)
+Se ejecuta en el navegaodr
+Es un lenguaje Case Sensitive
+Es un lenguaje de alto nivel (+ facil, + parecido a lenguaje humano)
+Tiene el monopolio en frontend (unico q se ejecuta en el navegador)
+
+Es un lenguaje basado en prototipos
+
+
+Es un lenguaje de programción interpretado			camelCase = holaMundo		
+NO es compilado							snake_case = hola_mundo
+
+el v8 engine esta creado en C++					Español: funciones snake_case y variables camelCase
+tipado dinamico							Ingles: funciones camelCase y variables snake_case
+				
+								solicitar_y_guardar()   requestAndSave()
+
+### TIPOS DE DATOS */						DRY => Dont repeat yourself
+								KISS => Keep it simple stupid
+/* Datos primitivos */
+/* 
+
+Number => numeros como los conocemos
+ej: 9, 0, -2, NaN, Infinity, 3.14(float{lo mismo q coma})
+
+String => textos, van entre comillas ('', "", ``)
+ej: 'holi', '6', 'quetal'
+
+Boolean => true o false
+
+Null => ausencia o nulidad de un dato
+ej: null
+typeof dice que es un objeto pero no lo es
+
+Undefined => no hay un dato definido
+ej: undefined
+*/
+
+/* 
+Soy un mensajero que envia una carta, llego a la casa, me atienden y dicen que quieren recibir la carta
+estado_de_respuesta: true
+
+Soy un mensajero que envia una carta, llego a la casa, me atienden y dicen que NO quieren recibir la carta
+estado_de_respuesta: false
+
+Soy un mensajero que envia una carta, me pierdo
+estado_de_respuesta: undefined
+
+Soy un mensajero que envia una carta, llego a la casa, no me atienden 
+estado_de_respuesta: null
+*/
+
+### CONSTRUCTURES */
+/* 
+String(dato) => transforma el dato a string
+typeof() => te dice que tipo de dato es 
+Number(dato) => transforma el dato a numero
+Boolean(dato) => transforma el dato a booleano
+
+
+
+
+*/
+### OPERADORES ARITMETICOS */
+/*
++: Concatenacion (une 2 strings)
+La concatenacion ocurre cuando uno de los valores es un string
+
++: suma
+-: resta
+* : multipliacion
+/ : division
+%: modulo
+*/
+
+### Truthy o Falsy */
+
+/*  
+Falsy => arrojan falso cuando los haces booleanos 
+0
+-0
+''
+false
+null
+undefined
+NaN
+*/
+
+### Comparadores */
+/* 
+Siempre devuelven booleanos
+
+== : igualdad (compara el valor)
+=== : estricta igualdad (compara el valor y el tipo de dato)
+!= : diferencia
+!== : estricta diferencia
+> : mayor que
+< : menor que
+>= : mayor o igual que
+
+*/
+
+### Funciones nativas */
+/* 
+typeof(dato) => es una funcion que recibe un dato y devuelve un booleano con true o false
+isNaN(dato) => devuelveun booleano(t/f) dependiendo si es o no un NaN
+alert(string) => recibe un string y lo muestra en pop-up en la pag (no retorna nada, undefined)
+typeof(dato)=> indidca que tipo de dato es
+prompt() => muestra una alerta pero con un input de texto, recibe el mensaje y lo guarda como string
+number() => convierte el dato a numero
+parseInt() => trunca numeros (corta el decimal, no redondea) , transforma a enteros
+parseFloat() => transforma a su valor numerico
+
+*/
+
+### IF  */
+/* 
+Sintaxis:
+
+if(condicion){
+    bloque de codigo
+}
+
+*/
+/*
+let edad = prompt('ingrese su edad')
+
+if(edad >= 18){
+    alert('podes pasar')
+}
+else{
+    alert('no podes pasar')
+}
+ */
+
+
+// ejercicios //
+
+/* 
+Crea una variable llamada "tiene hijos" y asignale "true" si tiene hijos o "false" si no tiene hijos. 
+A continuación escribe una linea de codigo para mostrar elvalor de la variable en una alerta
+
+Crea una variable llamada "salario" y solicita un salario actual como valor. 
+A continuación escribe una línea de codigo que calcule el saluario anual y muestre el resultado en una alerta
+
+Escribe una condicional que verifique si una variable llamda "edad" es mayor o igual a 18.
+Si es mayor o igual a 18, imprime eres mayor de edad en una alerta
+sino eres menor de edad 
+*/
+
+/* let tieneHijos = false 
+alert(tieneHijos)
+
+let salario = prompt('ingrese su salario')
+let salarioAnual = salario * 12
+alert('su salario anual es de: ' + salarioAnual)
+
+let edad = prompt('ingrese su edad')
+if(edad >= 18){
+    alert('eres mayor de edad')
+}
+else{
+    alert('eres menor')
+} */
+
+/* 
+De un empleado se sabe su sueldo y los años de antiguedad. El sector de contabilidad nos pide hacer un programa que lea los datos y nos muestgre.
+1) Si el sueldo es inferior a 500 y su antiguedad es igual o superior a 10 años, otorgarle un aumento del 20%, mostrar el sueldo a pagar-
+2) Si el sueldo es inerior a 500 pero su antiguedad es menor a 10 años, otorgarle un aumento del 5%
+3) Si el sueldo es mayor o igual a 500 moestrar el sueldo en la página sin cambios.
+*/
+
+let sueldo = prompt('ingrese su sueldo')
+let antiguedad = prompt('ingrese sus años de antiguedad')
+let sueldoNew = 0
+
+if(sueldo < 500 || antiguedad >= 10){
+    alert('su nuevo sueldo es ' + sueldo * 1.2)
+}
+else if(sueldo < 500 || antiguedad < 10){
+    alert('su nuevo sueldo es ' + sueldo * 1.05)
+}
+else{
+    alert('su sueldo es ' + sueldo)
+}
+
+
+### Principio DRY
+	Dont Reapeat Yourself. No te repitas.
+
+### WHILE */
+/* 
+    Solicitar un nombre al user, si el nombre es 'pepe' seguir solicitantdo el nombre
+    cuando sea distinto de pepe, decir, 'ese nombre no lo conozco'
+
+*/
+
+
+let nombre = prompt('ingrese su nombre')
+
+while(nombre === 'pepe'){
+    nombre = prompt('ingrese devuelta un nombre')
+}
+alert('ese nombre no lo conozco')
+
+//// clase 14
+    Quiero un progrma q dado un nombre me muestre una alerta con el nombre 3 veces
+/* let nombre = 'pepe' */
+
+asi no :P
+alert(nombre)
+alert(nombre)
+alert(nombre) 
+
+
+/* we need a bucle para no escribir tanto al pedo  */
+
+// FOR 
+// se usa para repetir algo "x" cantidad de veces
+ 
+    Sintaxis 
+    for(let iterador = valor_inicial; limite; actualizacion)
+
+    limite => cuantas veces se va a ejecutar
+    actulizacion => se pone el aumento del iterador
+
+ 
+for(let iterador = 1; iterador <= 3; iterador = iterador + 1){
+    console.log(nombre+iterador)
+} 
+
+ 
+    mostrar por alerta el conteo del 1 al 10 (se deben ejecutar 10 alertas)
+
+    for(let i=1; i<=10; i=i+1){
+    alert(i)
+}
+
+
+
+ 
+    Solicitar al usuario un numero 3 veces, al final mostrar una alerta con la sumatoria de los 3 numeros
+ 
+     let suma = 0
+    for(let j=1; j <= 3; j=j+1){
+        let numero = prompt('ingrese un numero')
+        while(!numero || isNaN(numero)){ // verifica que sea un valor que quiero
+            numero = prompt('dato no valido, ingrese un numero')
+        }
+
+        suma = suma + Number(numero)
+    }
+    alert(suma) 
+
+ \n => esto hace un salto de linea en los console.log o alert() 
+
+
+ TAREA
+    Solicitar al usuario la cantidad de personas de la clase
+    dependiendo de la cant de alumnos de la clase se va a solicitar a c/u el nombre
+    Mostrarlo en el sgte formato:
+    Lista de alumnos:
+    - juan 
+    - pepe .....
+ 
+
+/* let n = prompt('nro de personas')
+while(!n || isNaN(n) || n<=0){
+    n = prompt('ingrese un nro valido')
+}
+lista_alum = 'Lista de alummnos:'
+for(i=1; i<=n; i=i+1){
+    let nombre = prompt('ingrese el nombre')
+    while(!nombre){
+        nombre = prompt('ingrese un nombre valido')
+    }
+    lista_alum = lista_alum + '\n- ' + nombre
+}
+alert(lista_alum)
+ */
+/* FUNCIONES */
+/* 
+SinTAXIS
+    function nombreDeFuncion(a,b){       a y b son variables que se utilizan en el codigo y despues se pueden reemplazar al invocarlo
+        return codigo                    sin return sale undefined. 
+    }                                    en el codigo se pone lo que hace la funsao.
+*/
+
+
+/* declaro lafuncion
+function sumar2mas2(){
+    console.log(2+2)
+}
+
+invocacion o llamada a lafuncion
+sumar2mas2() */
+
+
+/*  DRY. ESTO ESTA  MAL PORQUE SE REPITE.... QUE PODEMOS HACER? FUNCIONES.
+let suma = 0
+let repes = prompt('ingrese cuantos nros vs a sumar')
+while(!repes || isNaN(repes)){ // verifica que sea un valor que quiero
+    repes = prompt('dato no valido, ingrese un numero')
+}
+
+    for(let j=1; j <= repes; j=j+1){
+        let numero = prompt('ingrese un numero')
+        while(!numero || isNaN(numero)){ 
+            numero = prompt('dato no valido, ingrese un numero')
+        }
+
+        suma = suma + Number(numero)
+    }
+    alert(suma) */
+
+
+// aca usamos la funcion para no repetir logica.
+    /* function check4number(a){
+        while(!a || isNaN(a)){ // que no sea un falsy o un NaN 
+            a = prompt('dato no valido, ingrese un numero')
+        }
+    }
+
+    let suma = 0
+    let repes = prompt('ingrese cuantos nros vs a sumar')
+    check4number(repes)
+   
+    for(let j=1; j <= repes; j=j+1){
+        let numero = prompt('ingrese un numero')
+        check4number(numero)
+        suma = suma + Number(numero)
+    }
+    alert(suma)
+ */
+
+    /* 
+    EJERCICIO
+    calcularIva(precio) => el valor del iva
+    calcularIva(100) => 21
+
+     function calcularIva(precio){
+        return precio * 0.21
+    }
+    alert(calcularIva(2000))
+    */
+
+    /* MAS EJERCICIOS FUNCTION*/
+    /* 
+        calcularMinutos(horas) => cantidad de minutos
+        calcularMinutos(1) => 60
+
+
+        obtenerNumero()
+        Va a solicitar un nro y valida que el dato sea un numero
+        Sino deb volver a solicitarlo
+        Cuando termine de validar se retornara el numero
+    
+    */
+
+   /*  function calcularMinutos(hs){
+        return hs * 60
+    }
+
+    function obtenerNumero(){
+        let num = prompt('ingrese un numero')
+        while(!num || isNaN(num)){
+            num = prompt('ingrese un valor valido') 
+        }
+        num = Number(num)
+        return num
+    } */
+   
+   /* 
+    STRINGS
+
+    propertys
+    string.length => muestra los caracteres del string
+    ej.: 'pepe'.length = 4
+
+    metodos
+    string.toLowerCase() => pasa a minusculas
+    string.toUpperCase() => pasa a Mayusculas
+    string.trim() => elimina los espacios
+    string.includes(string_buscado) => verifica que el string buscado esta dentro del string (booleano)
+    string.replaceAll(string_a_reemplazar, valor_nuevo) => reemplaza partes de un string
+    string.repeat(numero)
+   */
+
+* OBJETOS */
+/* 
+    los objetos siempre usamos con const, porque con let se puede cambiar totalmente el objeto (sin querer) a un string, boolean, etc...
+    y con const solo podes cambiar/agregar propiedades.
+    Usar let funciona, PERO, const es mas reliable
+*/
+
+/* 
+let edadUser = 90
+let nombreUser = 'pepe'
+let dineroUser = 7000
+ */
+
+
+/* modelo key value */
+let usuario = {
+    edad: 90,
+    nombre: 'pepe',
+    dinero: 7000
+}
+console.log(usuario.dinero)
+
+/* Crear un objeto llamado producto que tenga precio, nombre, descripcion y marca */
+
+let producto ={
+    precio: 10000,
+    nombre: 'asadito',
+    descripcion: 'brocheta de carne buenarda',
+    marca: 'ochsi'
+}
+
+
+/* objeto llamado persona, q tenga nombre, edad y mejorAmigo
+    mejorAmigo debe ser otro objeto que solo tenga nombre y edad
+*/
+
+const persona ={
+    nombre: 'pepe',
+    'nombre completo':'Pipo Suarez',
+    edad: 22,
+    mejorAmigo:{
+        nombre: 'juan',
+        edad: 29
+    }
+}
+
+persona.edad = 40 // sobreescribe la edad anterior
+persona.dni = 12345678 // crea una nueva propiedad
+console.log(persona)
+conseole.log(persona['nombre completo']) //asi se hace cuando la propiedad es un string 
+
+const auto ={
+    marca: 'Honda',
+    modelo: 'Civic Ex',
+    anio: 2001
+}
+
+{   // podemos usar el mismo nombre para otro scope
+    const auto = 'camaro'
+}
+
+
+/* ARRAYS */
+/* 
+array, list, collection, matriz
+se usan para listar elementos 
+un array es un objeto.
+ */
+
+     // index     0, 1, 2
+const notasCuatri = [9,10,6]
+notasCuatri[2] = 9
+console.log('el tercer parcial quitaste: ' + notasCuatri[2])
+
+console.log(typeof[notasCuatri])
+// object
+
+/* 
+const notas = {
+    0: 9,
+    1: 10,
+    2: 6,
+    length: 3
+}
+ */
+
+
+const nombres = [
+    'pepe',
+    'juan',
+    'maria',
+    'pedro',
+    'valentina',
+    'alex',
+]
+
+/* malas practicas */
+/* 
+nombres[5] = 'alexis' 
+delete nombres[5]  
+nombres[7] = 'ezequiel'
+*/
+
+/* METODOS DE ARRAYS*/      // ordenar primero nombres y despues ejemplos
+// array.pop() => elimina el ultimo elemento y lo retorna
+// .shift() => elimina el primer elemento y lo retorna
+// .push() => agrega al final
+// .unshift() => agrega al inicio
+// .indexOf('string') => busca el elemento en el array y si lo encunetra devuelve la posicion, sino da -1. SOLO ARRAY STRINGS
+// .splice(posicion, nro_q_elimino, nvo_elemento) podemos agregar y eliminar
+
+
+/* nombres.pop() */
+/* nombres.shift() */
+/* let nuevoLength = nombres.push('leonel')
+console.log(nuevoLength) */
+/* let posMaria = nombres.indexOf('maria')
+nombres[posMaria] = 'marianela' */
+/* let posValentina = nombres.indexOf('valentina')
+nombres.splice(posValentina, 1, 'john', 'frank')
+console.log(nombres) */
+
+
+// eliminar a juan y a maria
+/* let posJuan = nombres.indexOf('juan')
+nombres.splice(posJuan, 2)
+console.log(nombres) */
+
+
+// esta funcion facilita el proceso de eliminar nombres
+function borrarNombre(a){
+    let nombre = a
+    let posNombre = nombres.indexOf(nombre)
+    nombres.splice(posNombre, 1)
+}
+
+borrarNombre('juan')
+console.log(nombres)
+
+####### CLASE 16
+/*  Mostrar un console.log que diga Hola y el nombre de c/u de los nombres del array
+const nombres = ['pepe', 'juan', 'fran']
+
+for(let index=0; index<nombres.length; index++){
+    console.log('hola ' + nombres[index])
+}
+
+for(let index=0; index<nombres.length; index++){
+    let nombre = nombres[index]
+    console.log('hola ' + nombre)
+} 
+*/
+
+
+const carrito = [
+    {
+       nombre: 'tv samsung',
+       precio: 300,
+       cantidad: 3 
+    },
+    {
+        nombre: 'computadora',
+        precio: 220,
+        cantidad: 1 
+     }
+]
+
+/* 
+    Por c/ elemento del carrito mostrar por consola:
+    Haz comprado el producto {nombre} x {cantidad} a un precio unitario de ${precio}
+ */
+
+  /*   for(let index = 0; index < carrito.length; index++){
+        const producto = carrito[index]
+        console.log('Haz comprado el producto "' + carrito[index].nombre + '" x ' + producto.cantidad + ' a un precio unitario de $' + producto.precio)
+    } */
+// usar carrito[index].nombre no esta mal pero, es mas descriptivo con producto.nombre !!!
+
+
+/* const personajes = [
+    {
+        nombre: 'shakespeare',
+        apellido: 'william',
+        edad: 2
+    },
+    {
+        nombre: 'Ronaldo',
+        apellido: 'Nazario',
+        edad: 2
+    },
+    {
+        nombre: 'Leo',
+        apellido: 'Messi',
+        edad: 2
+    },
+    {
+        nombre: 'Colt',
+        apellido: 'Bs',
+        edad: 2
+    },
+] */
+
+/* 
+    Por cada personaje mostrar el sgte mensaje por consola:
+    'hola mi nombre es (nombre) (apellido) y tengo (edad) años.'
+    Al finalizar el recorrido mostrar x consola 'total de edades: sumatoria_de_edades'
+*/
+
+/* let sumatoria = 0
+for(let index = 0; index < personajes.length; index++){
+    const persona = personajes[index]
+    sumatoria = sumatoria + persona.edad 
+    console.log('Hola, mi nombre es ' + persona.nombre + ' ' + persona.apellido + ' y tengo ' + persona.edad + ' años')
+}
+console.log(sumatoria) */
+
+
+// for of 
+// sirve para recorrer todas los elementos de un array
+/* for(const persona of personajes){
+    console.log('Hola, mi nombre es ' + persona.nombre + ' ' + persona.apellido + ' y tengo ' + persona.edad + ' años')
+}
+ */
+
+/* const nombres = ['pipo', 'juan', 'roman', 'rico']
+for(const nombre of nombres){
+    console.log(nombre)
+} */
+
+
+// for in 
+
+/* const datos = {
+    nombre: 'pepe',
+    apellido:'suarez',
+    dni: '1234567'
+}
+
+for(let key in datos){  // muestra las propiedades del objeto
+    console.log(key)
+} */
+
+// ejemplo practico de uso
+/* let resultado = ''
+for(let propiedad in datos){
+    resultado = resultado + '\n' + propiedad + ': ' + datos[propiedad]
+}
+
+console.log(resultado) */
+
+
+/* METODOS AVANZADOS de Arrays */
+const personajes = [
+    {
+        nombre: 'shakespeare',
+        apellido: 'william',
+        edad: 2
+    },
+    {
+        nombre: 'Ronaldo',
+        apellido: 'Nazario',
+        edad: 2
+    },
+    {
+        nombre: 'Leo',
+        apellido: 'Messi',
+        edad: 20
+    },
+    {
+        nombre: 'Colt',
+        apellido: 'Bs',
+        edad: 2
+    },
+]
+// FOR EACH... recorre todo 
+/* personajes.forEach(function(personaje){
+    console.log(personaje)
+}) */
+
+/*  FILTER
+Un metodo avanzado es un metodo que recibe un callback    
+Filter es un metodo avanzado que recibe un callback, la callback recibe a el elemento
+Si el valor de retorno es truthy entonces el elemento se agregara al array resultante
+Si el valor de retorno de callback es falsy entonces se ignora
+FILTER SIEMPRE RETORNA ARRAY        
+ */
+/* const personsMayores = personajes.filter(function(personaje){
+    return personaje.edad >= 18
+})
+console.log(personsMayores) */
+
+
+
+/* FIND
+Un metodo avanzado es un metodo que recibe un callback    
+Filter es un metodo avanzado que recibe un callback, la callback recibe a el elemento
+Si el valor de retorno es truthy entonces el elemento se retorna y se corta el find (si hay 2 o 3 pepes solo devuelve el primero)
+Si el valor de retorno de callback es falsy entonces se ignora
+FIND retorna el elemento o undefined(si no encuentra nada)
+ */
+const leo = personajes.find(function(personaje){
+    return personaje.nombre.toLowerCase() === 'leo'
+})
+
+console.log(leo)
+
+
+const productos = [
+    {
+        nombre: 'tv samsung',
+        marca: 'samsung',
+        id: 1,
+        precio: 3000
+    },
+    {
+        nombre: 'celular samsung',
+        marca: 'samsung',
+        id: 2,
+        precio: 800
+    },
+    {
+        nombre: 'tv LG',
+        marca: 'LG',
+        id: 3,
+        precio: 2900
+    },
+    {
+        nombre: 'tv noblex',
+        marca: 'noblex',
+        id: 4,
+        precio: 2300
+    },
+]
+/* 
+    Traer los productos que sean de precio inferior a 2950
+    Traer los productos de marca noblex
+    Traer los productos q en su nombre incluyab el string 'tv'
+*/
+
+/* const menor2950 = productos.filter(function(product){
+    return product.precio < 2950
+})
+console.log(menor2950) */
+
+/* const marcaNoblex = productos.filter(function(product){
+   return product.marca.toLowerCase() === 'noblex'.toLowerCase()
+})
+console.log(marcaNoblex)
+
+const tvs = productos.filter(function(product){
+    return product.nombre.toLowerCase().includes('tv'.toLowerCase())
+})
+console.log(tvs) */
+
+
+/* MAP 
+Sirve para crear un array a partir de otro array
+Va a recorrer el array y por cada elemento la callback se ejecuta
+El valor de retorno de la callback es el valor del nuevo elemento que se agregara al array resultante
+
+RETORNA UN ARRAY
+*/
+
+const objetardos = [
+    {
+        nombre: 'vaso',
+    },
+    {
+        nombre: 'tornillo',
+    },
+    {
+        nombre: 'computadora',
+    },
+]
+
+/* quiero un nuevo array que sea asi
+[
+    '<div>vaso</div>',
+    '<div>tornillo</div>',
+    '<div>computadora</div>',
+]
+*/
+
+const listaHTML = objetardos.map(function(obj){
+    return '<div>'+ obj.nombre +'</div>'
+})
+console.log(listaHTML)
+
+const resultadoX = objetardos.map(function(obj){
+    return 'pepe'
+})
+console.log(resultadoX)
+
+
+/* 
+TAREA:
+.some() => sirve p saber si un elemetno cumple con x condicion
+.every() => sirve p saber si todos los elemetnos cumple con x condicion
+.findIndex() => sirve p buscar el index/indice de x elemento
+*/
